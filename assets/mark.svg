@@ -1,0 +1,6 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 48" fill="none" role="img" aria-label="Actually">
+  <!-- Checkmark + red period dot, matching the app icon (ActuallyLogoGlyph). -->
+  <path d="M10.52 24 L19.85 35.14 L36.79 16.76"
+        stroke="#FFFFFF" stroke-width="6.72" stroke-linecap="round" stroke-linejoin="round"/>
+  <circle cx="37.11" cy="34.87" r="3.72" fill="#FF3D45"/>
+</svg>
