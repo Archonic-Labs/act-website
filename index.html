@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <meta name="theme-color" content="#0b0909" />
+  <meta name="theme-color" content="#ffffff" />
   <meta name="description" content="Double-tap the back of your iPhone while you watch. Actually reads the claim, checks it against real sources, and shows the verdict in the Dynamic Island." />
   <title>Actually — Back Tap to Fact Check</title>
   <meta property="og:type" content="website" />
@@ -15,7 +15,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap" />
-  <link rel="stylesheet" href="landing.css" />
+  <link rel="stylesheet" href="playful.css" />
 </head>
 <body>
   <a class="skip-link" href="#main">Skip to content</a>
@@ -23,7 +23,7 @@
   <!-- Shared icons, referenced with <use>. -->
   <svg width="0" height="0" style="position:absolute" aria-hidden="true">
     <symbol id="i-arrow" viewBox="0 0 24 24"><path d="M7 17 17 7M17 7H8M17 7v9" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></symbol>
-    <symbol id="i-mark" viewBox="0 0 48 48"><path d="M10.52 24 19.85 35.14 36.79 16.76" fill="none" stroke="currentColor" stroke-width="6.72" stroke-linecap="round" stroke-linejoin="round"/><circle cx="37.11" cy="34.87" r="3.72" fill="#ff3d45"/></symbol>
+    <symbol id="i-mark" viewBox="0 0 48 48"><path d="M10.52 24 19.85 35.14 36.79 16.76" fill="none" stroke="currentColor" stroke-width="6.72" stroke-linecap="round" stroke-linejoin="round"/><circle cx="37.11" cy="34.87" r="3.72" fill="currentColor"/></symbol>
     <symbol id="i-check" viewBox="0 0 20 20"><circle cx="10" cy="10" r="10" fill="currentColor"/><path d="m5.8 10.3 2.8 2.8 5.6-6" fill="none" stroke="#000" stroke-opacity=".78" stroke-width="2.1" stroke-linecap="round" stroke-linejoin="round"/></symbol>
     <symbol id="i-cross" viewBox="0 0 20 20"><circle cx="10" cy="10" r="10" fill="currentColor"/><path d="m6.6 6.6 6.8 6.8m0-6.8-6.8 6.8" fill="none" stroke="#000" stroke-opacity=".78" stroke-width="2.1" stroke-linecap="round"/></symbol>
     <symbol id="i-seal" viewBox="0 0 20 20"><path d="m10 1.5 2.2 1.6 2.7-.1.8 2.6 2.2 1.6-.9 2.6.9 2.6-2.2 1.6-.8 2.6-2.7-.1L10 18.5l-2.2-1.6-2.7.1-.8-2.6-2.2-1.6.9-2.6-.9-2.6 2.2-1.6.8-2.6 2.7.1z" fill="currentColor"/><path d="m6.8 10.2 2.2 2.2 4.3-4.6" fill="none" stroke="#000" stroke-opacity=".75" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></symbol>
@@ -49,57 +49,23 @@
 
   <main id="main">
     <section class="lead" aria-labelledby="lead-title">
-      <h1 id="lead-title">Double-tap the back of your iPhone. Actually tells you if what you just heard is true.</h1>
+      <p class="eyebrow">Actually / 01<br />An interruption in certainty.</p>
+      <h1 id="lead-title">You saw it.<br /><span>You believed it.</span><br />One of those was optional.</h1>
+      <p class="hero-description">Double-tap the back of your iPhone.<br />Actually checks what you just heard.<br />Keep watching.</p>
+      <div class="stray-type" aria-hidden="true">( ? )</div>
+      <span class="margin-note" aria-hidden="true">DO NOT ACCEPT AT FACE VALUE.</span>
       <div class="lead-actions">
         <a class="button button-primary" href="https://apps.apple.com/us/app/actually/id6776004865">Download on the App Store <svg class="button-icon" aria-hidden="true"><use href="#i-arrow" /></svg></a>
         <a class="button button-quiet" href="#how-it-works">See how it works</a>
       </div>
       <p class="lead-note">Free to start. iPhone with iOS 17 or later.</p>
 
-      <!-- Hero demo: a short video plays, the back is tapped, and the verdict lands in the Dynamic Island. -->
-      <div class="stage stage-hero" data-demo="hero" data-step="verdict" role="img" aria-label="An iPhone playing a short video. After a double back tap, the Dynamic Island expands with the verdict: Refuted, with three sources." style="--stage-bg: url('assets/bg/stripes.jpg')">
-        <div class="tap-cue" aria-hidden="true">
-          <span class="tap-ring"></span><span class="tap-ring"></span>
-          <b>Double back tap</b>
-        </div>
-
-        <div class="phone" aria-hidden="true">
-          <div class="screen video">
-            <div class="video-scene"><i></i><i></i><i></i></div>
-            <div class="status-bar"><b>9:41</b><span class="status-icons"><i></i><i></i><i></i></span></div>
-
-            <div class="island">
-              <div class="island-compact">
-                <svg class="island-logo"><use href="#i-mark" /></svg>
-                <span>Checking claim…</span>
-                <i class="spinner"></i>
-              </div>
-              <div class="island-expanded">
-                <div class="island-top">
-                  <span class="island-brand"><svg><use href="#i-mark" /></svg>Actually</span>
-                  <span class="island-verdict is-refuted"><svg><use href="#i-cross" /></svg>Refuted</span>
-                  <span class="source-trail"><i>N</i><i>B</i><i>S</i></span>
-                </div>
-                <p class="island-claim">“The Great Wall is visible from space.”</p>
-                <p class="island-answer">Not to the naked eye. Astronauts in low orbit say it’s too narrow to pick out.</p>
-                <p class="island-link">Tap for full sources</p>
-              </div>
-            </div>
-
-            <div class="video-rail"><i></i><i></i><i></i><i></i></div>
-            <p class="video-caption"><span>and it’s the only thing</span><br /><span>you can see from space</span></p>
-            <div class="video-meta">
-              <b>@weirdhistory</b>
-              <span>Original audio</span>
-              <i class="video-progress"></i>
-            </div>
-          </div>
-        </div>
-      </div>
+      <!-- Drop the hero screenshot into assets/demos/hero-check.png. -->
+      <div class="demo-stage demo-stage-0" data-scroll-scene><span class="floating-sticker sticker-one" aria-hidden="true">[ claim received ]</span><span class="floating-sticker sticker-two" aria-hidden="true">↳ pending reality</span><span class="orbit orbit-one" aria-hidden="true"></span><span class="orbit orbit-two" aria-hidden="true"></span><div class="demo-device" data-tilt><div class="demo-screen"><div class="demo-fallback"><span class="demo-number">01</span><svg width="56" height="56" aria-hidden="true"><use href="#i-mark" /></svg><strong>The two-tap fact check</strong><span class="demo-placeholder-label">[ image not yet supplied ]</span><span class="demo-dots" aria-hidden="true">+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;+</span></div><img data-demo-image="assets/demos/hero-check.png" alt="Actually the two-tap fact check preview" hidden /></div></div><span class="stage-caption">FIG. 01 — A SECOND OPINION</span></div>
     </section>
 
     <section id="how-it-works" class="section" aria-labelledby="how-title">
-      <h2 id="how-title">How it works</h2>
+      <h2 id="how-title">Instructions for doubting something.</h2>
       <ol class="step-list">
         <li>
           <span>1</span>
@@ -127,36 +93,7 @@
           <p>The check runs while the video keeps playing. The claim, a one-line answer, and its sources show up in the Dynamic Island and on the Lock Screen.</p>
           <a class="arrow-link" href="#how-it-works">How Back Tap works <span aria-hidden="true">→</span></a>
         </div>
-        <div class="stage" role="img" aria-label="The Dynamic Island and a Lock Screen Live Activity, both showing a Supported verdict." style="--stage-bg: url('assets/bg/clouds.jpg'); --k: 1.95">
-          <div class="ui ui-island">
-            <div class="island island-static">
-              <div class="island-expanded">
-                <div class="island-top">
-                  <span class="island-brand"><svg><use href="#i-mark" /></svg>Actually</span>
-                  <span class="island-verdict is-supported"><svg><use href="#i-check" /></svg>Supported</span>
-                  <span class="source-trail"><i>U</i><i>H</i><i>A</i></span>
-                </div>
-                <p class="island-claim">“Honey never goes bad.”</p>
-                <p class="island-answer">Sealed honey keeps for decades. Low moisture and natural acidity stop bacteria from growing.</p>
-                <p class="island-link">Tap for full sources</p>
-              </div>
-            </div>
-
-            <div class="live-activity">
-              <div class="la-head">
-                <span class="la-brand"><svg><use href="#i-mark" /></svg>Actually</span>
-                <span class="badge is-supported"><svg><use href="#i-check" /></svg>Supported</span>
-                <small>now</small>
-              </div>
-              <p class="la-claim">“Honey never goes bad.”</p>
-              <p class="la-answer">Sealed honey keeps for decades. Low moisture and natural acidity stop bacteria from growing.</p>
-              <div class="la-foot">
-                <span class="source-trail"><i>U</i><i>H</i><i>A</i></span>
-                <small>3 sources · 94% confidence</small>
-              </div>
-            </div>
-          </div>
-        </div>
+        <div class="demo-stage demo-stage-1" data-scroll-scene><div class="demo-device" data-tilt><div class="demo-screen"><div class="demo-fallback"><span class="demo-number">02</span><svg width="56" height="56" aria-hidden="true"><use href="#i-mark" /></svg><strong>A little island. A big answer.</strong><span class="demo-placeholder-label">[ image not yet supplied ]</span><span class="demo-dots" aria-hidden="true">+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;+</span></div><img data-demo-image="assets/demos/dynamic-island.png" alt="Actually a little island. a big answer. preview" hidden /></div></div><span class="stage-caption">FIG. 02 — AN ANSWER, ELSEWHERE</span></div>
       </article>
 
       <article id="sources" class="feature-panel">
@@ -166,22 +103,7 @@
           <p>Open a check to read the reasoning and every source behind it. Each one is rated for trust, and you can flag any you don’t trust.</p>
           <a class="arrow-link" href="/support">How accurate is it? <span aria-hidden="true">→</span></a>
         </div>
-        <div class="stage" role="img" aria-label="A fact-check detail card: Refuted, 92% confidence, with three high-trust sources." style="--stage-bg: url('assets/bg/checks-red.jpg'); --k: 1.75">
-          <div class="ui ui-card">
-            <div class="card-head">
-              <span class="badge is-refuted"><svg><use href="#i-cross" /></svg>Refuted</span>
-              <small>92% confidence</small>
-            </div>
-            <p class="card-claim">“The Great Wall of China is the only man-made thing you can see from space.”</p>
-            <p class="card-why">From low Earth orbit the wall is too narrow and too close to the color of the land around it to see with the naked eye. Cities, highways, and airports are much easier to spot.</p>
-            <p class="card-label">Sources</p>
-            <ul class="source-list">
-              <li><i>N</i><span><strong>nasa.gov</strong><small>Earth observation from the ISS</small></span><em><svg><use href="#i-seal" /></svg>High trust</em></li>
-              <li><i>B</i><span><strong>britannica.com</strong><small>Great Wall of China</small></span><em><svg><use href="#i-seal" /></svg>High trust</em></li>
-              <li><i>S</i><span><strong>scientificamerican.com</strong><small>What astronauts can see from orbit</small></span><em><svg><use href="#i-seal" /></svg>High trust</em></li>
-            </ul>
-          </div>
-        </div>
+        <div class="demo-stage demo-stage-2" data-scroll-scene><div class="demo-device" data-tilt><div class="demo-screen"><div class="demo-fallback"><span class="demo-number">03</span><svg width="56" height="56" aria-hidden="true"><use href="#i-mark" /></svg><strong>Receipts included.</strong><span class="demo-placeholder-label">[ image not yet supplied ]</span><span class="demo-dots" aria-hidden="true">+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;+</span></div><img data-demo-image="assets/demos/sources.png" alt="Actually receipts included. preview" hidden /></div></div><span class="stage-caption">FIG. 03 — SHOW YOUR WORK</span></div>
       </article>
 
       <article id="share" class="feature-panel">
@@ -190,126 +112,18 @@
           <h3>Got a link? Share it instead.</h3>
           <p>Send an article, a post, or a screenshot to Actually from the Share Sheet. You get the same check and the same sources.</p>
         </div>
-        <div class="stage" role="img" aria-label="The iOS Share Sheet with Actually selected, and a banner that says Fact-checking shared link." style="--stage-bg: url('assets/bg/checks-green.jpg'); --k: 1.85">
-          <div class="ui ui-share">
-            <div class="share-toast">
-              <i class="spinner"></i>
-              <strong>Fact-checking shared link…</strong>
-            </div>
-            <div class="share-sheet">
-              <div class="share-link">
-                <i class="share-thumb"></i>
-                <span><strong>Study: Coffee drinkers live longer</strong><small>news article · 4 min read</small></span>
-              </div>
-              <div class="share-apps">
-                <span class="is-actually"><i><svg><use href="#i-mark" /></svg></i>Actually</span>
-                <span><i></i>AirDrop</span>
-                <span><i></i>Messages</span>
-                <span><i></i>Notes</span>
-              </div>
-              <div class="share-actions">
-                <span>Copy</span>
-                <span>Add to Reading List</span>
-              </div>
-            </div>
-          </div>
-        </div>
+        <div class="demo-stage demo-stage-3" data-scroll-scene><div class="demo-device" data-tilt><div class="demo-screen"><div class="demo-fallback"><span class="demo-number">04</span><svg width="56" height="56" aria-hidden="true"><use href="#i-mark" /></svg><strong>Share it. Check it.</strong><span class="demo-placeholder-label">[ image not yet supplied ]</span><span class="demo-dots" aria-hidden="true">+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;+</span></div><img data-demo-image="assets/demos/share-sheet.png" alt="Actually share it. check it. preview" hidden /></div></div><span class="stage-caption">FIG. 04 — PASS IT THROUGH</span></div>
       </article>
     </section>
 
     <section id="app" class="section" aria-labelledby="app-title">
       <div class="section-heading-split">
-        <h2 id="app-title">Actually for iPhone <span class="tag">iOS 17+</span></h2>
+        <h2 id="app-title">Things you thought you knew. <span class="tag">iOS 17+</span></h2>
         <p>Start a check, see what people are checking, and come back to anything you’ve checked.</p>
       </div>
 
       <div class="app-panel">
-        <div class="stage stage-app" role="img" aria-label="Three Actually screens: fact check history, the home dashboard, and trending claims.">
-          <div class="phone phone-side phone-left" aria-hidden="true">
-            <div class="screen app-screen">
-              <div class="status-bar"><b>9:41</b><span class="status-icons"><i></i><i></i><i></i></span></div>
-              <i class="island-pill"></i>
-              <i class="back"></i>
-              <p class="app-title">History</p>
-              <p class="app-sub">Every check, with its reasoning and sources.</p>
-              <div class="history-list">
-                <article class="history-row">
-                  <header><span class="badge is-refuted"><svg><use href="#i-cross" /></svg>Refuted</span><small>2m ago</small></header>
-                  <p>The Great Wall is visible from space with the naked eye.</p>
-                  <footer>3 sources · 92% confidence</footer>
-                </article>
-                <article class="history-row">
-                  <header><span class="badge is-supported"><svg><use href="#i-check" /></svg>Supported</span><small>1h ago</small></header>
-                  <p>Honey never goes bad if it stays sealed.</p>
-                  <footer>3 sources · 94% confidence</footer>
-                </article>
-                <article class="history-row">
-                  <header><span class="badge is-mixed">Mixed</span><small>Yesterday</small></header>
-                  <p>Coffee drinkers live longer than people who skip it.</p>
-                  <footer>4 sources · 71% confidence</footer>
-                </article>
-                <article class="history-row">
-                  <header><span class="badge is-refuted"><svg><use href="#i-cross" /></svg>Refuted</span><small>Yesterday</small></header>
-                  <p>Goldfish only have a three-second memory.</p>
-                  <footer>2 sources · 88% confidence</footer>
-                </article>
-              </div>
-            </div>
-          </div>
-
-          <div class="phone" aria-hidden="true">
-            <div class="screen app-screen">
-              <div class="status-bar"><b>9:41</b><span class="status-icons"><i></i><i></i><i></i></span></div>
-              <i class="island-pill"></i>
-              <div class="app-head"><svg><use href="#i-mark" /></svg><i class="gear"></i></div>
-
-              <div class="tile tile-record">
-                <strong>Start recording now</strong>
-                <small>Tap below then start the broadcast</small>
-                <i class="record-btn"></i>
-              </div>
-              <div class="tile-row">
-                <div class="tile tile-square tile-checks">
-                  <strong>3/25</strong>
-                  <small>Checks used</small>
-                </div>
-                <div class="tile tile-square tile-history">
-                  <strong>History</strong>
-                  <small>Check your history</small>
-                </div>
-              </div>
-              <div class="tile tile-trending">
-                <strong>Trending Now</strong>
-                <small>Claims people are checking</small>
-                <ul>
-                  <li>Honey never goes bad<span class="badge is-supported">Supported</span></li>
-                  <li>We only use 10% of our brains<span class="badge is-refuted">Refuted</span></li>
-                  <li>Bulls hate the color red<span class="badge is-refuted">Refuted</span></li>
-                  <li>Coffee helps you live longer<span class="badge is-mixed">Mixed</span></li>
-                </ul>
-              </div>
-            </div>
-          </div>
-
-          <div class="phone phone-side phone-right" aria-hidden="true">
-            <div class="screen app-screen">
-              <div class="status-bar"><b>9:41</b><span class="status-icons"><i></i><i></i><i></i></span></div>
-              <i class="island-pill"></i>
-              <i class="back"></i>
-              <p class="app-title">Trending</p>
-              <p class="app-sub">Claims people are checking most often.</p>
-              <div class="feed">
-                <div class="feed-row"><b>1</b><span>We only use 10% of our brains</span><small>×412</small><i class="badge is-refuted">Refuted</i></div>
-                <div class="feed-row"><b>2</b><span>Honey never goes bad</span><small>×356</small><i class="badge is-supported">Supported</i></div>
-                <div class="feed-row"><b>3</b><span>Bulls hate the color red</span><small>×298</small><i class="badge is-refuted">Refuted</i></div>
-                <div class="feed-row"><b>4</b><span>Coffee helps you live longer</span><small>×241</small><i class="badge is-mixed">Mixed</i></div>
-                <div class="feed-row"><b>5</b><span>Lightning never strikes twice</span><small>×187</small><i class="badge is-refuted">Refuted</i></div>
-                <div class="feed-row"><b>6</b><span>Bananas are berries</span><small>×163</small><i class="badge is-supported">Supported</i></div>
-                <div class="feed-row"><b>7</b><span>Great Wall is visible from space</span><small>×150</small><i class="badge is-refuted">Refuted</i></div>
-              </div>
-            </div>
-          </div>
-        </div>
+        <div class="demo-stage demo-gallery" data-scroll-scene><div class="demo-device" data-tilt><div class="demo-screen"><div class="demo-fallback"><span class="demo-number">05</span><svg width="56" height="56" aria-hidden="true"><use href="#i-mark" /></svg><strong>Your rabbit-hole archive</strong><span class="demo-placeholder-label">[ image not yet supplied ]</span><span class="demo-dots" aria-hidden="true">+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;+</span></div><img data-demo-image="assets/demos/app-history.png" alt="Actually your rabbit-hole archive preview" hidden /></div></div><div class="demo-device" data-tilt><div class="demo-screen"><div class="demo-fallback"><span class="demo-number">06</span><svg width="56" height="56" aria-hidden="true"><use href="#i-mark" /></svg><strong>Meet your fact-check button</strong><span class="demo-placeholder-label">[ image not yet supplied ]</span><span class="demo-dots" aria-hidden="true">+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;+</span></div><img data-demo-image="assets/demos/app-home.png" alt="Actually meet your fact-check button preview" hidden /></div></div><div class="demo-device" data-tilt><div class="demo-screen"><div class="demo-fallback"><span class="demo-number">07</span><svg width="56" height="56" aria-hidden="true"><use href="#i-mark" /></svg><strong>What’s everyone checking?</strong><span class="demo-placeholder-label">[ image not yet supplied ]</span><span class="demo-dots" aria-hidden="true">+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;+</span></div><img data-demo-image="assets/demos/app-trending.png" alt="Actually what’s everyone checking? preview" hidden /></div></div></div>
 
         <ul class="app-feature-list">
           <li>
@@ -347,7 +161,7 @@
     </section>
 
     <section class="closing-section" aria-labelledby="closing-title">
-      <h2 id="closing-title">Know what’s actually true before you share it.</h2>
+      <h2 id="closing-title">You can keep scrolling.<br /><span>Or you can know.</span></h2>
       <div class="lead-actions">
         <a class="button button-primary" href="https://apps.apple.com/us/app/actually/id6776004865">Download on the App Store <svg class="button-icon" aria-hidden="true"><use href="#i-arrow" /></svg></a>
         <a class="button button-quiet" href="/support">Get help setting up</a>

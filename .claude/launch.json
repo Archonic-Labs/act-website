@@ -1,0 +1,11 @@
+{
+  "version": "0.0.1",
+  "configurations": [
+    {
+      "name": "site",
+      "runtimeExecutable": "/Users/akshay/.nvm/versions/node/v24.18.0/bin/npx",
+      "runtimeArgs": ["--yes", "http-server@14.1.1", "/Users/akshay/Documents/act-website", "-p", "5501", "-c-1", "--silent"],
+      "port": 5501
+    }
+  ]
+}
