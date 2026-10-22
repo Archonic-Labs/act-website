@@ -16,6 +16,8 @@ from PIL import Image
 ROOT = pathlib.Path(__file__).resolve().parent.parent
 PAGES = ["index.html", "support.html", "privacy.html", "terms.html", "404.html"]
 PITCH = 2
+# Desktop first screen, the full length of a desktop page, and a phone width.
+VIEWPORTS = [(1280, 900), (1280, 6000), (390, 3000)]
 
 
 def serve():
@@ -26,10 +28,10 @@ def serve():
     return server
 
 
-def shoot(url, out):
+def shoot(url, out, size):
     subprocess.run(
         ["chromium", "--headless", "--no-sandbox", "--disable-gpu", "--hide-scrollbars",
-         "--force-device-scale-factor=1", "--window-size=1280,900", f"--screenshot={out}", url],
+         "--force-device-scale-factor=1", f"--window-size={size[0]},{size[1]}", f"--screenshot={out}", url],
         check=True, capture_output=True, timeout=60,
     )
     return Image.open(out).convert("L")
@@ -70,11 +72,13 @@ def main():
     failures = 0
     with tempfile.TemporaryDirectory() as tmp:
         for page in PAGES:
-            try:
-                check(page, shoot(f"http://127.0.0.1:{port}/{page}", f"{tmp}/{page}.png"))
-            except AssertionError as error:
-                failures += 1
-                print(f"FAIL {error}")
+            for size in VIEWPORTS:
+                label = f"{page} @{size[0]}x{size[1]}"
+                try:
+                    check(label, shoot(f"http://127.0.0.1:{port}/{page}", f"{tmp}/{page}.png", size))
+                except AssertionError as error:
+                    failures += 1
+                    print(f"FAIL {error}")
     server.shutdown()
     sys.exit(1 if failures else 0)
 
