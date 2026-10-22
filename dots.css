@@ -1,10 +1,10 @@
-/* Dot matrix. The whole page is seen through one uniform 3px grid of dots: the gaps are white,
+/* Dot matrix. The whole page is seen through one uniform 2px grid of dots: the gaps are white,
    every dot is the same size, and each dot takes the tone of whatever is beneath it. Empty page
    is the light base tone; text and elements are simply darker dots. Loaded last on every page. */
 :root {
   color-scheme: light;
-  --dot-pitch: 3px;
-  --dot-radius: 1.1px;
+  --dot-pitch: 2px;
+  --dot-radius: 0.6px;
   --dot-base: #dedede;
   --dot-ink: #111;
 
@@ -38,8 +38,8 @@ body {
   min-height: 100vh;
   background: var(--dot-base);
   color: var(--dot-ink);
-  -webkit-mask-image: radial-gradient(circle, #000 var(--dot-radius), transparent calc(var(--dot-radius) + 0.3px));
-  mask-image: radial-gradient(circle, #000 var(--dot-radius), transparent calc(var(--dot-radius) + 0.3px));
+  -webkit-mask-image: radial-gradient(circle at 0.5px 0.5px, #000 var(--dot-radius), transparent calc(var(--dot-radius) + 0.05px));
+  mask-image: radial-gradient(circle at 0.5px 0.5px, #000 var(--dot-radius), transparent calc(var(--dot-radius) + 0.05px));
   -webkit-mask-size: var(--dot-pitch) var(--dot-pitch);
   mask-size: var(--dot-pitch) var(--dot-pitch);
   -webkit-mask-repeat: repeat;

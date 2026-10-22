@@ -6,7 +6,7 @@ Direction: the entire site is one uniform grid of tiny dots. Nothing is drawn ou
 every text, line and element is just the same dots, rendered darker.
 
 ## The grid (dots.css, loaded last on every page)
-- Pitch 3px, dot radius ~1.1px, one grid across the whole document (mask on `body`).
+- Pitch 2px, one 1px dot per cell, one grid across the whole document (mask on `body`).
 - Gaps between dots: `#ffffff` (the `html` background). Nothing else ever shows in the gaps.
 - Empty page dot: `--dot-base` `#dedede`. Nothing on the page may be lighter than this, so
   white surfaces are remapped to the base and images are multiplied onto it.
@@ -19,7 +19,7 @@ every text, line and element is just the same dots, rendered darker.
 
 ## Type
 - Existing families stay (Arial on the landing page, DM Sans/Syne on document pages).
-- Weights are nudged up one step so letters stay legible at 3px dot resolution.
+- Weights are nudged up one step so letters stay legible at 2px dot resolution.
 
 ## Components
 - Buttons and links: dark dots; hover changes tone, never adds a colour.

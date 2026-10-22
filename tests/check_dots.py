@@ -1,4 +1,4 @@
-"""Renders every page in headless Chromium and checks the dot matrix: within each 3px cell only
+"""Renders every page in headless Chromium and checks the dot matrix: within each 2px cell only
 one pixel position may differ from the white gap, so every dot is the same size on one grid,
 and that dot must be darker on text than on empty page.
 
@@ -15,7 +15,7 @@ from PIL import Image
 
 ROOT = pathlib.Path(__file__).resolve().parent.parent
 PAGES = ["index.html", "support.html", "privacy.html", "terms.html", "404.html"]
-PITCH = 3
+PITCH = 2
 
 
 def serve():
