@@ -1,0 +1,81 @@
+/* Dot matrix. The whole page is seen through one uniform 3px grid of dots: the gaps are white,
+   every dot is the same size, and each dot takes the tone of whatever is beneath it. Empty page
+   is the light base tone; text and elements are simply darker dots. Loaded last on every page. */
+:root {
+  color-scheme: light;
+  --dot-pitch: 3px;
+  --dot-radius: 1.1px;
+  --dot-base: #dedede;
+  --dot-ink: #111;
+
+  /* Landing page (playful.css). */
+  --ink: var(--dot-ink);
+  --gray: #555;
+  --paper: var(--dot-base);
+
+  /* Document pages (styles.css): the dark theme becomes tones of the same dots. */
+  --bg: var(--dot-base);
+  --bg-soft: var(--dot-base);
+  --surface: #c9c9c9;
+  --surface-2: #bdbdbd;
+  --line: rgba(0, 0, 0, 0.2);
+  --line-strong: rgba(0, 0, 0, 0.35);
+  --text: var(--dot-ink);
+  --muted: #555;
+  --muted-2: #777;
+  --accent: var(--dot-ink);
+  --accent-bright: var(--dot-ink);
+  --accent-ink: var(--dot-base);
+  --good: #333;
+  --warn: #444;
+}
+
+html {
+  background: #fff;
+}
+
+body {
+  min-height: 100vh;
+  background: var(--dot-base);
+  color: var(--dot-ink);
+  -webkit-mask-image: radial-gradient(circle, #000 var(--dot-radius), transparent calc(var(--dot-radius) + 0.3px));
+  mask-image: radial-gradient(circle, #000 var(--dot-radius), transparent calc(var(--dot-radius) + 0.3px));
+  -webkit-mask-size: var(--dot-pitch) var(--dot-pitch);
+  mask-size: var(--dot-pitch) var(--dot-pitch);
+  -webkit-mask-repeat: repeat;
+  mask-repeat: repeat;
+}
+
+/* Letters need a little more mass to survive at dot resolution. */
+p, li, a, span, small, summary, h3 { font-weight: 600; }
+h1, h2 { font-weight: 800; }
+
+/* Nothing may be lighter than the base dot, so white surfaces fall back to it. */
+.site-header,
+.skip-link,
+.nav-toggle,
+.primary-nav,
+.demo-device,
+.demo-screen,
+.demo-fallback,
+.demo-screen img {
+  background: var(--dot-base);
+}
+.demo-device { box-shadow: 5px 5px 0 #bbb; }
+.demo-stage:before,
+.demo-stage:after { color: #888; }
+.feature-panel:after { color: #aaa; }
+.site-footer { border-top-color: #aaa; }
+.demo-screen img { mix-blend-mode: multiply; }
+img { mix-blend-mode: multiply; filter: grayscale(1); }
+
+/* Document pages: no glow, header sits on the same base tone. */
+.atmosphere { display: none; }
+.site-header::after { background: var(--dot-base); }
+.island-dot { box-shadow: none; }
+.tap-ripple { border-color: rgba(0, 0, 0, 0.45); }
+
+/* A 1px bar can fall between dot rows; give it a full row. */
+.scroll-progress { height: var(--dot-pitch); background: var(--dot-ink); }
+
+::selection { background: var(--dot-ink); color: var(--dot-base); }
